@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770375100500",
+    "project_id": "marea-d7ec1",
+    "storage_bucket": "marea-d7ec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770375100500:android:79132531e8bbc04adb65c1",
+        "android_client_info": {
+          "package_name": "com.maritime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVqcZNRGPfy9S8q4bC-G9bqYpT5YKxyws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

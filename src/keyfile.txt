@@ -1,0 +1,9 @@
+storePassword -> marea12345
+alias-> Marea
+keyPassword -> marea12345
+first and last name -> Marea
+Organizational Unit -> ASM Global LLP
+Organizational Name -> ASM Global LLP
+City -> Gurgaon
+State -> Haryana
+country code -> IN

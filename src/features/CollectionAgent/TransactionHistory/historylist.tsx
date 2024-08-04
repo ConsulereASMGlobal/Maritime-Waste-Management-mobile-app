@@ -1,0 +1,92 @@
+export const historyList = [
+  {
+    id: 1,
+    date: "6/9/23",
+    dropOfPointName: "Manila",
+    amount: "+10 Points",
+  },
+  {
+    id: 2,
+    date: "6/10/23",
+    dropOfPointName: "Cebu City",
+    amount: "+8 Points",
+  },
+  {
+    id: 3,
+    date: "6/11/23",
+    dropOfPointName: "Davao City",
+    amount: "+12 Points",
+  },
+  {
+    id: 4,
+    date: "6/12/23",
+    dropOfPointName: "Quezon City",
+    amount: "+6 Points",
+  },
+  {
+    id: 5,
+    date: "6/13/23",
+    dropOfPointName: "Makati City",
+    amount: "+14 Points",
+  },
+  {
+    id: 6,
+    date: "6/14/23",
+    dropOfPointName: "Cagayan de Oro",
+    amount: "+7 Points",
+  },
+  {
+    id: 7,
+    date: "6/15/23",
+    dropOfPointName: "Baguio",
+    amount: "+11 Points",
+  },
+  {
+    id: 8,
+    date: "6/16/23",
+    dropOfPointName: "Iloilo City",
+    amount: "+9 Points",
+  },
+  {
+    id: 9,
+    date: "6/17/23",
+    dropOfPointName: "Angeles City",
+    amount: "+5 Points",
+  },
+  {
+    id: 10,
+    date: "6/18/23",
+    dropOfPointName: "Cavite City",
+    amount: "+13 Points",
+  },
+  {
+    id: 11,
+    date: "6/19/23",
+    dropOfPointName: "Batangas City",
+    amount: "+8 Points",
+  },
+  {
+    id: 12,
+    date: "6/20/23",
+    dropOfPointName: "Zamboanga City",
+    amount: "+10 Points",
+  },
+  {
+    id: 13,
+    date: "6/21/23",
+    dropOfPointName: "Bacolod City",
+    amount: "+12 Points",
+  },
+  {
+    id: 14,
+    date: "6/22/23",
+    dropOfPointName: "Olongapo",
+    amount: "+6 Points",
+  },
+  {
+    id: 15,
+    date: "6/23/23",
+    dropOfPointName: "Tacloban City",
+    amount: "+15 Points",
+  },
+];
