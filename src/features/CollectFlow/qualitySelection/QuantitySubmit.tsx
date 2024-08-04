@@ -79,7 +79,7 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
   const [quantity, setQuantity] = useState();
 
   const route = useRoute();
-  const { item, payload, categoryList, index }: any = route?.params;
+  const { payload, categoryList, index }: any = route?.params;
   const [selectedItem, setSelectedItem] = useState(wasteSources[0]);
 
   const navigation = useNavigation<any>();
@@ -109,23 +109,19 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
   }, []);
 
   const onSubmit: SubmitHandler<InputProps> = async (data) => {
-    if (!quantity) {
-      toast.danger({ message: t("Quantity is required") });
-      return;
-    }
+    // if (!quantity) {
+    //   toast.danger({ message: t("Quantity is required") });
+    //   return;
+    // }
 
-    if (!maxTwoDecimalRegExp.test(quantity)) {
-      toast.danger({
-        message: t("Quantity should have at most two decimal places"),
-      });
-      return;
-    }
+    // if (!maxTwoDecimalRegExp.test(quantity)) {
+    //   toast.danger({
+    //     message: t("Quantity should have at most two decimal places"),
+    //   });
+    //   return;
+    // }
 
     let tempItem = [...categoryList];
-    tempItem[index].quantity = quantity;
-    tempItem[index].brand = "";
-    tempItem[index].form = "";
-    tempItem[index].remark = comment;
     const newPayload = {
       ...payload,
       data: [
@@ -259,7 +255,7 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
         automaticallyAdjustKeyboardInsets={true}
         showsVerticalScrollIndicator={false}
       >
-        <TextMedium style={GlobalStyles.headerTitle}>
+        {/* <TextMedium style={GlobalStyles.headerTitle}>
           {t("You have selected")} {item?.name}
         </TextMedium>
 
@@ -282,11 +278,11 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
             />
           </View>
           <TextMedium style={styles.textTitle}>{item?.name}</TextMedium>
-        </View>
+        </View> */}
 
-        <View style={styles.line} />
+        {/* <View style={styles.line} /> */}
         <View style={{ width: "100%", padding: 12 }}>
-          <TextField
+          {/* <TextField
             style={{
               color: colors.dark,
               paddingBottom: 5,
@@ -348,7 +344,7 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
             onSelect={handleOptionSelection}
           />
 
-          <Spacer spacing={10} />
+          <Spacer spacing={10} /> */}
           <View
             style={{
               flexDirection: "row",

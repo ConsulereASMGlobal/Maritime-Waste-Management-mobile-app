@@ -38,6 +38,7 @@ import {
 import { RootState, useAppDispatch } from "../../../redux/store";
 import { useTranslation } from "react-i18next";
 import { DropDown } from "../../../components/Dropdown/DropDown";
+import toast from "@src/services/toast";
 
 interface Props {
   route: any;
@@ -56,11 +57,23 @@ export const CategoryScreen = ({}: Props) => {
   const customerId = useSelector(selectUserId);
   const profileData = useSelector(selectProfile);
 
+  const ships = [
+    { id: 1, label: "Ship 1", value: 1 },
+    { id: 2, label: "Ship 2", value: 2 },
+    { id: 3, label: "Ship 3", value: 3 },
+  ];
+
+  const [selectedShip, setSelectedShip] = useState();
+
   const scrapCategoryRender = ({ item, index }) => {
     const _handleCategoryRoute = () => {
+      if (!selectedShip) {
+        return toast.danger({ message: "Please select a ship first" });
+      }
       navigation.navigate(routes.quality.default, {
         customerId: customerId,
         userId: profileData?.pickupointId,
+        selectedShip: ships.find((each) => (each.id = selectedShip)),
         data: [
           {
             categoryId: item?.id,
@@ -102,14 +115,6 @@ export const CategoryScreen = ({}: Props) => {
   }, []);
 
   const { t } = useTranslation();
-
-  const ships = [
-    { id: 1, label: "Ship 1", value: 1 },
-    { id: 2, label: "Ship 2", value: 2 },
-    { id: 3, label: "Ship 3", value: 3 },
-  ];
-
-  const [selectedShip, setSelectedShip] = useState();
 
   return (
     <ScrollView style={{ backgroundColor: colors.backgroundColor, flex: 1 }}>

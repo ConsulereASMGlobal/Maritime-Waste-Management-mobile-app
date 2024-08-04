@@ -433,7 +433,7 @@ export function RootNavigation() {
       <StackNavigation.Screen
         name={routes.quality.selection}
         component={QuantitySubmit}
-        options={optionsWithoutHeaderLeft("Select Quantity")}
+        options={optionsWithoutHeaderLeft("Upload Image")}
       />
       <StackNavigation.Screen
         name={routes.notificaion.list}

@@ -180,7 +180,7 @@ export const pdfGenerator = async (
       <!-- <meta name="theme-color" content="#000000" style="box-sizing: border-box" /> -->
       <!-- <meta
         name="description"
-        content="Extended Resources"
+        content="Maritime"
         style="box-sizing: border-box" /> -->
   
       <style>
