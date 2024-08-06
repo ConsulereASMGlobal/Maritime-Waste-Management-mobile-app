@@ -61,6 +61,7 @@ import { CertifiedMaterialsDetail } from "@src/features/CertifiedMaterials/Certi
 import Deals from "@src/features/HomeScreen/Components/Deals";
 import Trend from "@src/features/Trend/Trend";
 import { useTranslation } from "react-i18next";
+import { AcceptQRScan } from "@src/features/AcceptedMaterial/DetailScreen/AcceptQRScan";
 
 const StackNavigation = createNativeStackNavigator();
 
@@ -314,6 +315,13 @@ export function RootNavigation() {
         //   headerTitle: "Delivery Confirmation",
         // }}
       />
+
+      <StackNavigation.Screen
+        name={"acceptQRScan"}
+        component={AcceptQRScan}
+        options={optionsWithoutHeaderLeft("Acccept Material")}
+      />
+
       <StackNavigation.Screen
         name={"history"}
         component={History}
@@ -423,7 +431,24 @@ export function RootNavigation() {
       <StackNavigation.Screen
         name={"collectReceipt"}
         component={CollectReceipt}
-        options={optionsWithoutHeaderLeft(t("Collection Receipt"))}
+        options={{
+          title: t("Collection Receipt"),
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(routes.bottomTabs.default);
+              }}
+            >
+              <DynamicIcon
+                iconName={"arrow-back-outline"}
+                iconSize={25}
+                iconColor={colors.dark}
+                iconFamily={"Ionicons"}
+              />
+            </TouchableOpacity>
+          ),
+        }}
       />
       <StackNavigation.Screen
         name={routes.quality.default}

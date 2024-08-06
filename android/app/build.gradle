@@ -82,8 +82,8 @@ android {
         applicationId "com.maritime"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 13
-        versionName "1.1.3"
+        versionCode 1
+        versionName "1.0.1"
         missingDimensionStrategy 'react-native-camera', 'general'
     }
 

@@ -488,7 +488,12 @@ const DetailScreen = ({ route }: any) => {
                 style={{ backgroundColor: colors.primaryDark, width: "47%" }}
                 textStyle={[{ marginRight: 0 }]}
                 disabled={loading}
-                onPress={() => handleAccept()}
+                // onPress={() => handleAccept()}
+                onPress={() =>
+                  navigation.navigate("acceptQRScan", {
+                    orderId: item.id,
+                  })
+                }
               />
               <Button
                 title={t("Reject")}
