@@ -1,5 +1,5 @@
 import { Alert, StyleSheet, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextField, TextMedium } from "@src/components/TextField/TextField";
 import {
   BORDER_RADIUS_SIZE,
@@ -135,6 +135,12 @@ const DetailScreen = ({ route }: any) => {
   const formOptions = { resolver: yupResolver({}) };
 
   const { handleSubmit, ...formProps } = useForm<any>(formOptions);
+
+  useEffect(() => {
+    seletedUserType === "RECYCLER" &&
+      navigation.setOptions({ title: "Accept Waste" });
+  }, []);
+
   return (
     <ScrollContainerLayout>
       <View style={styles.mainContainer}>
@@ -203,8 +209,8 @@ const DetailScreen = ({ route }: any) => {
               <View style={styles.rowContainer}>
                 <TextField>
                   {seletedUserType == "RECYCLER"
-                    ? t("Aggregator Name")
-                    : t("Collection Agent Name")}
+                    ? t("Vessel Name")
+                    : t("Supplier Name")}
                 </TextField>
                 <TextField style={{ width: "50%", textAlign: "right" }}>
                   {seletedUserType === "RECYCLER"
@@ -249,8 +255,8 @@ const DetailScreen = ({ route }: any) => {
               <View style={styles.rowContainer}>
                 <TextField>
                   {seletedUserType == "RECYCLER"
-                    ? t("Dispatch Date")
-                    : t("Collection Date")}
+                    ? t("Unloading Date")
+                    : t("Loading Date")}
                 </TextField>
                 <TextField style={{ width: "50%", textAlign: "right" }}>
                   {seletedUserType === "RECYCLER"
@@ -323,6 +329,17 @@ const DetailScreen = ({ route }: any) => {
               >
                 {t("Qty")}
               </TextField>
+
+              {seletedUserType === "RECYCLER" && (
+                <TextField
+                  style={{
+                    color: colors.white,
+                    flex: 0.3,
+                  }}
+                >
+                  {t("AQty")}
+                </TextField>
+              )}
             </View>
 
             {allItemsWithCategory.map((item: any) => (
@@ -341,6 +358,16 @@ const DetailScreen = ({ route }: any) => {
                 <TextMedium style={{ textAlign: "right" }}>
                   {truncateToTwoDecimalPlaces(item.quantity)}
                 </TextMedium>
+                {seletedUserType === "RECYCLER" && (
+                  <View style={{ flex: 0.3 }}>
+                    <ValidationInput
+                      placeholder="Street"
+                      fieldName="street"
+                      autoCapitalize={"none"}
+                      {...formProps}
+                    />
+                  </View>
+                )}
               </View>
             ))}
             <Spacer spacing={10} />
@@ -350,7 +377,7 @@ const DetailScreen = ({ route }: any) => {
                 color: colors.secondary,
               }}
             >
-              {t("Note: All quantity in Kgs")}
+              {t("Note: All quantity in Kgs. AQty = Actual Quantity")}
             </TextField>
 
             {seletedUserType === "PICKUP_POINT" && (
@@ -469,7 +496,7 @@ const DetailScreen = ({ route }: any) => {
               </View>
             )}
           </View>
-          {showBtns && (
+          {showBtns && seletedUserType !== "RECYCLER" && (
             <View
               style={[
                 { justifyContent: "space-between", flexDirection: "row" },
@@ -483,7 +510,7 @@ const DetailScreen = ({ route }: any) => {
                     ? t("Accept")
                     : weightSlip
                     ? t("Accept")
-                    : t("Accept & Pay")
+                    : t("Accept")
                 }
                 style={{ backgroundColor: colors.primaryDark, width: "47%" }}
                 textStyle={[{ marginRight: 0 }]}
@@ -512,6 +539,34 @@ const DetailScreen = ({ route }: any) => {
                       { text: t("Yes"), onPress: () => handleReject() },
                     ]
                   )
+                }
+              />
+            </View>
+          )}
+
+          {seletedUserType === "RECYCLER" && (
+            <View>
+              <Button
+                title={t("Confirm")}
+                style={{ backgroundColor: colors.primary }}
+                textStyle={[{ marginRight: 0 }]}
+                onPress={() =>
+                  // Alert.alert(
+                  //   t("Alert!"),
+                  //   t("Are you sure you want to reject the consignment?"),
+                  //   [
+                  //     {
+                  //       text: t("Cancel"),
+                  //       onPress: () => console.log("Cancel Pressed"),
+                  //       style: "cancel",
+                  //     },
+                  //     { text: t("Yes"), onPress: () => handleReject() },
+                  //   ]
+                  // )
+                  {
+                    setMessage(t("Waste has been accepted!"));
+                    setInfoModal(true);
+                  }
                 }
               />
             </View>

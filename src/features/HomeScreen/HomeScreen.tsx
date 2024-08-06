@@ -105,7 +105,7 @@ const HomeScreen = ({ navigation }: any) => {
       description: "Receive recyclables from suppliers",
       icon: "acceptMaterail",
 
-      navigateTo: "pendingSignupList",
+      navigateTo: "categoryScreen",
       permission: "RECYCLER",
       showDot: customerList?.length > 0,
     },
@@ -231,11 +231,13 @@ const HomeScreen = ({ navigation }: any) => {
           />
         }
       >
-        {selectedUserType === "CUSTOMER" ? (
+        {/* {selectedUserType === "CUSTOMER" ? (
           <StreakContainer />
         ) : (
           <InfoContainer />
-        )}
+        )} */}
+
+        <InfoContainer />
 
         <Spacer spacing={10} />
         {profileLoading ? (
@@ -369,9 +371,11 @@ const HomeScreen = ({ navigation }: any) => {
             <ViewMap
               text={
                 userType === "PICKUP_POINT"
-                  ? t("Looking for the recyclers in your area?")
+                  ? t(
+                      "Looking for the waste management companies in your area?"
+                    )
                   : userType === "RECYCLER"
-                  ? t("Looking for the suppliers in your area?")
+                  ? t("Looking for the shipping companies in your area?")
                   : t(
                       "Click here to view the ongoing special price for various materials"
                     )

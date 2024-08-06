@@ -379,7 +379,7 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
           <Spacer spacing={5} />
 
           <TextField style={{ textAlign: "center", fontSize: 14 }}>
-            {t("Proof of Collection")}{" "}
+            {t("Proof of Loading")}{" "}
             <TooltipComp
               children={
                 <FastImage
@@ -400,7 +400,7 @@ export const QuantitySubmit = ({ onFocus, onBlur }: TextInputProps) => {
           <Spacer spacing={10} />
 
           <View>
-            <TextField>{t("Actual Collection Date")}:</TextField>
+            <TextField>{t("Actual Loading Date")}:</TextField>
             <Spacer spacing={5} />
 
             <ValidationInput

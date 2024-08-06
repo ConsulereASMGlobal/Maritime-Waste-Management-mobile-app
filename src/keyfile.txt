@@ -1,7 +1,7 @@
-storePassword -> marea12345
-alias-> Marea
-keyPassword -> marea12345
-first and last name -> Marea
+storePassword -> maritime123
+alias-> Maritime
+keyPassword -> maritime123
+first and last name -> Maritime
 Organizational Unit -> ASM Global LLP
 Organizational Name -> ASM Global LLP
 City -> Gurgaon

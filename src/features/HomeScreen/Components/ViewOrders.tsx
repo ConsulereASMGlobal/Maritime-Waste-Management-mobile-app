@@ -64,7 +64,7 @@ const ViewOrders = ({ refresh }) => {
               ? t("Recent Supplies")
               : seletedUserType === "RECYCLER"
               ? t("Incoming Shipments")
-              : t("Recent Dispatch")}
+              : t("Recent Unload")}
             {"  "}
 
             <TooltipComp
@@ -152,7 +152,7 @@ const ViewOrders = ({ refresh }) => {
             <TextField
               style={{ color: colors.blue, fontWeight: "600", fontSize: 14 }}
             >
-              {seletedUserType !== "CUSTOMER" ? t("Order ID") : t("Material")}
+              {seletedUserType !== "CUSTOMER" ? t("Order ID :") : t("Material")}
             </TextField>
             <TextField>
               {" "}
@@ -169,8 +169,8 @@ const ViewOrders = ({ refresh }) => {
               {seletedUserType === "CUSTOMER"
                 ? t("Quantity")
                 : seletedUserType === "RECYCLER"
-                ? t("Dispatch Date")
-                : t("Collection Date")}
+                ? t("Unloading Date :")
+                : t("Unloading Date :")}
             </TextField>
             <TextField>
               {seletedUserType === "CUSTOMER"

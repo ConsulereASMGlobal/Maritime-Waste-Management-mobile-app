@@ -96,10 +96,10 @@ android {
             keyPassword 'android'
         }
        release {
-            storeFile file('marea.keystore')
-            keyAlias 'Marea'
-            storePassword 'marea12345'
-            keyPassword 'marea12345'
+            storeFile file('maritime.keystore')
+            keyAlias 'Maritime'
+            storePassword 'maritime123'
+            keyPassword 'maritime123'
         }
     }
     buildTypes {

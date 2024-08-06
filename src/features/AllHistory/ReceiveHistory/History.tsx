@@ -81,9 +81,7 @@ export const History = () => {
         <Spacer spacing={10} />
 
         <View style={styles.headerArea}>
-          <TextField style={styles.headerText}>
-            {t("Received Materials")}
-          </TextField>
+          <TextField style={styles.headerText}>{t("Waste Received")}</TextField>
           <View
             style={{
               borderColor: colors.primary,
@@ -104,7 +102,9 @@ export const History = () => {
             <TextField style={styles.tableHeader}>{t("Date")}</TextField>
           </View>
           <View style={{ flex: 0.5 }}>
-            <TextField style={styles.tableHeader}>{t("Aggregator")}</TextField>
+            <TextField style={styles.tableHeader}>
+              {t("Shipping Company")}
+            </TextField>
           </View>
           <View style={{ flex: 0.2, alignItems: "flex-end" }}>
             <TextField style={styles.tableHeader}>{t("Qty")}</TextField>

@@ -566,7 +566,7 @@ export const pdfGenerator = async (
                             Company Name
                           </td>
                           <td style="padding-right: 10px">:</td>
-                          <td>Malaysian Recycling Alliance</td>
+                          <td>Matitime Waste Management</td>
                         </tr>
                         <tr>
                           <td

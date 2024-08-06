@@ -50,6 +50,7 @@ const RenderItem = ({ item, t }) => {
                 styles.pointT,
                 {
                   color: item?.status === "ACTIVE" ? colors.green : colors.red,
+                  textAlign: "right",
                 },
               ]}
             >
@@ -103,7 +104,7 @@ export const CollectionAgentList = ({ navigation }: any) => {
 
         <View style={styles.headerArea}>
           <TextField style={styles.headerText}>
-            {t("Collection Agent")}
+            {t("Supply Vendor Co.")}
           </TextField>
           <View
             style={{
@@ -128,7 +129,16 @@ export const CollectionAgentList = ({ navigation }: any) => {
             <TextField style={styles.tableHeader}>{t("Name")}</TextField>
           </View>
           <View style={{ flex: 0.25 }}>
-            <TextField style={styles.tableHeader}>{t("Status")}</TextField>
+            <TextField
+              style={[
+                styles.tableHeader,
+                {
+                  textAlign: "right",
+                },
+              ]}
+            >
+              {t("Status")}
+            </TextField>
           </View>
         </View>
         <View style={styles.horizontalLine} />

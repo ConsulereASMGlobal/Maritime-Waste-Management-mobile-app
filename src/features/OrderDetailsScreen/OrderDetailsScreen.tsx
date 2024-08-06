@@ -121,7 +121,7 @@ const OrderDetailsScreen = ({ route }) => {
             {collect && (
               <View style={styles.row}>
                 <TextField style={styles.itemTextTitle}>
-                  Actual Collection Date :{" "}
+                  Actual Loading Date :{" "}
                 </TextField>
                 <TextField style={styles.itemText}>
                   {epochToHumanReadable(data?.collectionDate)}
@@ -130,7 +130,7 @@ const OrderDetailsScreen = ({ route }) => {
             )}
             <View style={styles.row}>
               <TextField style={styles.itemTextTitle}>
-                {collect ? "Depositor" : "Recycler"} Name :{" "}
+                {collect ? "Supply Vendor" : "Recycler"} Name :{" "}
               </TextField>
               <TextField style={styles.itemText}>
                 {collect ? data?.customerName : data?.centreInfo?.name}
@@ -360,7 +360,7 @@ const OrderDetailsScreen = ({ route }) => {
                   }}
                 />
                 <TextField style={{ marginTop: 10, textAlign: "center" }}>
-                  Proof of Collection
+                  Proof of Loading
                 </TextField>
                 <Spacer spacing={20} />
               </View>

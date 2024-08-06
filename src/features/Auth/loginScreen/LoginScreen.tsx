@@ -45,8 +45,8 @@ export const LoginScreen = ({ navigation }: any) => {
         <ImageBg />
         <View style={{ flex: 1, justifyContent: "center" }}>
           <TitleLogoView
-            title={`Malaysian Recycling Alliance`}
-            desc={`Making a Difference in Post consumer\nPackaging Waste`}
+            title={`Matitime Waste Management`}
+            desc={`Making a difference in Ocean and Maritime Waste`}
           />
           <View style={styles.rootContainer}>
             <View style={{ width: "100%" }}>

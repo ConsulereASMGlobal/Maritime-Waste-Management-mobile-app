@@ -46,7 +46,14 @@ const renderItem =
               </TextField>
             </View>
             <View style={{ flex: 0.2 }}>
-              <TextField style={styles.pointT}>
+              <TextField
+                style={[
+                  styles.pointT,
+                  {
+                    textAlign: "right",
+                  },
+                ]}
+              >
                 {`${truncateToTwoDecimalPlaces(item?.inputQuantity)} KG`}
               </TextField>
             </View>
@@ -91,7 +98,7 @@ export const ProductionReport = () => {
 
         <View style={styles.headerArea}>
           <TextField style={styles.headerText}>
-            {t("Processing Materials")}
+            {t("Waste Generation")}
           </TextField>
           <View
             style={{
@@ -116,7 +123,16 @@ export const ProductionReport = () => {
             <TextField style={styles.tableHeader}>{t("Process")}</TextField>
           </View>
           <View style={{ flex: 0.2 }}>
-            <TextField style={styles.tableHeader}>{t("Qty")}</TextField>
+            <TextField
+              style={[
+                styles.tableHeader,
+                {
+                  textAlign: "right",
+                },
+              ]}
+            >
+              {t("Qty")}
+            </TextField>
           </View>
         </View>
         <View style={styles.horizontalLine} />

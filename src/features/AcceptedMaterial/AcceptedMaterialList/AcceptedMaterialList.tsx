@@ -40,6 +40,11 @@ const AcceptedMaterialList = () => {
 
   const { t } = useTranslation();
 
+  useEffect(() => {
+    seletedUserType === "RECYCLER" &&
+      navigation.setOptions({ title: "Accept Waste" });
+  }, []);
+
   const renderItem = ({ item }) => {
     return (
       <Pressable
@@ -118,8 +123,8 @@ const AcceptedMaterialList = () => {
                 <View style={styles.rowContainer}>
                   <TextField>
                     {seletedUserType == "RECYCLER"
-                      ? t("Aggregator Name")
-                      : t("Collection Agent Name")}
+                      ? t("Vessel Name")
+                      : t("Supplier Name")}
                   </TextField>
                   <TextField style={{ width: "50%", textAlign: "right" }}>
                     {seletedUserType === "RECYCLER"
@@ -164,8 +169,8 @@ const AcceptedMaterialList = () => {
                 <View style={styles.rowContainer}>
                   <TextField>
                     {seletedUserType == "RECYCLER"
-                      ? t("Dispatch Date")
-                      : t("Collection Date")}
+                      ? t("Unloading Date")
+                      : t("Loading Date")}
                   </TextField>
                   <TextField style={{ width: "50%", textAlign: "right" }}>
                     {seletedUserType === "RECYCLER"

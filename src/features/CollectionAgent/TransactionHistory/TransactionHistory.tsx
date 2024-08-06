@@ -45,12 +45,19 @@ export const TransactionHistory = () => {
           </TextField>
         </View>
         <View style={{ flex: 0.4 }}>
-          <TextField style={styles.dateLoc}>
+          <TextField
+            style={[
+              styles.dateLoc,
+              {
+                textAlign: "right",
+              },
+            ]}
+          >
             {item?.orderDetails[0]?.items[0]?.quantity}{" "}
             {item?.orderDetails[0]?.items[0]?.unit}
           </TextField>
         </View>
-        <View style={{ flex: 0.3 }}>
+        {/* <View style={{ flex: 0.3 }}>
           {item?.status === "REJECTED" ? (
             <TextField style={[styles.pointT, { color: colors.red }]}>
               {t(item?.status)}
@@ -61,7 +68,7 @@ export const TransactionHistory = () => {
               {item?.orderDetails[0]?.items[0]?.currency}
             </TextField>
           )}
-        </View>
+        </View> */}
       </View>
       <View style={styles.horizontalLine} />
     </>
@@ -75,7 +82,9 @@ export const TransactionHistory = () => {
           <TextField style={styles.headerText}>History</TextField>
         </View> */}
         <View style={styles.headerArea}>
-          <TextField style={styles.headerText}>{t("History")}</TextField>
+          <TextField style={styles.headerText}>
+            {t("Supplied Materials")}
+          </TextField>
           <View
             style={{
               borderColor: colors.primary,
@@ -99,11 +108,20 @@ export const TransactionHistory = () => {
             <TextField style={styles.tableHeader}>{t("Item")}</TextField>
           </View>
           <View style={{ flex: 0.4 }}>
-            <TextField style={styles.tableHeader}>{t("Qty")}</TextField>
+            <TextField
+              style={[
+                styles.tableHeader,
+                {
+                  textAlign: "right",
+                },
+              ]}
+            >
+              {t("Qty")}
+            </TextField>
           </View>
-          <View style={{ flex: 0.3 }}>
+          {/* <View style={{ flex: 0.3 }}>
             <TextField style={styles.tableHeader}>{t("Amount")}</TextField>
-          </View>
+          </View> */}
         </View>
         <View style={styles.horizontalLine} />
         {loading ? (

@@ -119,7 +119,7 @@ const OrderCard = ({ item, detail, history = false, flowfrom }: any) => {
           {flowfrom === "CollectOrder" && (
             <>
               <View style={styles.rowContainer}>
-                <TextField>{t("Actual Collection Date")}</TextField>
+                <TextField>{t("Actual Loading Date")}</TextField>
                 <TextField>
                   {epochToHumanReadable(item?.collectionDate)}
                 </TextField>
@@ -127,7 +127,7 @@ const OrderCard = ({ item, detail, history = false, flowfrom }: any) => {
 
               <Spacer spacing={5} />
               <View style={styles.rowContainer}>
-                <TextField>{t("Depositor Name")}</TextField>
+                <TextField>{t("Supply Vendor")}</TextField>
                 <TextField style={{ width: "60%", textAlign: "right" }}>
                   {item?.customerName ? item?.customerName.trim(" ") : "N/A"}
                 </TextField>
@@ -305,7 +305,7 @@ const OrderCard = ({ item, detail, history = false, flowfrom }: any) => {
                   color: colors.secondary,
                 }}
               >
-                {t("Proof of Collection")}:
+                {t("Proof of Loading ")}:
               </TextField>
               <Spacer spacing={5} />
               <View

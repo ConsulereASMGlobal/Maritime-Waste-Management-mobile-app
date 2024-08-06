@@ -46,7 +46,14 @@ const renderItem =
               </TextField>
             </View>
             <View style={{ flex: 0.2 }}>
-              <TextField style={styles.pointT}>
+              <TextField
+                style={[
+                  styles.pointT,
+                  {
+                    textAlign: "right",
+                  },
+                ]}
+              >
                 {truncateToTwoDecimalPlaces(sumQuantity(item?.orderDetails))} KG
               </TextField>
             </View>
@@ -90,7 +97,7 @@ export const CollectOrderList = ({ navigation }: any) => {
         <Spacer spacing={10} />
         <View style={styles.headerArea}>
           <TextField style={styles.headerText}>
-            {t("Accepted Materials")}
+            {t("Accepted Supplies")}
           </TextField>
           <View
             style={{
@@ -113,11 +120,20 @@ export const CollectOrderList = ({ navigation }: any) => {
           </View>
           <View style={{ flex: 0.6 }}>
             <TextField style={styles.tableHeader}>
-              {t("Collection Agent")}
+              {t("Supply Vendor")}
             </TextField>
           </View>
           <View style={{ flex: 0.2 }}>
-            <TextField style={styles.tableHeader}>{t("Qty")}</TextField>
+            <TextField
+              style={[
+                styles.tableHeader,
+                {
+                  textAlign: "right",
+                },
+              ]}
+            >
+              {t("Qty")}
+            </TextField>
           </View>
         </View>
         <View style={styles.horizontalLine} />

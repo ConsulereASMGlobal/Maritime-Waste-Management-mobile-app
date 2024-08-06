@@ -31,21 +31,21 @@ const components: any = {
 const PICKUP_POINT_List = [
   {
     id: 1,
-    title: "Accepted Materials",
+    title: "Accepted Supplies",
     description: "View collection records",
     icon: "acceptedMaterialHistory",
     route: routes.history.collectHistory,
   },
   {
     id: 2,
-    title: "Processing",
+    title: "Waste Generation",
     description: "View processing records",
     icon: "processingHistory",
     route: routes.history.productionHistory,
   },
   {
     id: 3,
-    title: "Supplied Materials",
+    title: "Waste Unloading",
     description: "View supplied records",
     icon: "suppliedHistroy",
     route: routes.history.supplyHistory,
@@ -53,7 +53,7 @@ const PICKUP_POINT_List = [
 
   {
     id: 5,
-    title: "Collection Agent",
+    title: "Supply Vendor Co.",
     icon: "collectionAgentHistory",
     route: routes.history.collectionAgentList,
   },

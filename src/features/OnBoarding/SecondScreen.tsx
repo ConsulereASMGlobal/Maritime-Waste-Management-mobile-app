@@ -18,7 +18,7 @@ export const SecondScreen = () => {
         <ImageBox iconName="secondSvg" />
         <StepIndicator step="two" />
         <TitleView
-          heading="Malaysian Recycling Alliance"
+          heading="Matitime Waste Management"
           subHeading={`To promote separation and collection at source and avoid post-consumer packaging materials leakage into the environment`}
         />
         <TwoButtons navigation={navigation} screen="third" />

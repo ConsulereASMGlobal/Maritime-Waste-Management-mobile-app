@@ -183,7 +183,8 @@ export const PickUpDate = ({ navigation, route }) => {
       (item) => item?.value === recyclerId
     );
     console.log(recyclerInfo, "00000000");
-    navigation.navigate("TransportationInfo", {
+    // navigation.navigate("TransportationInfo", {
+    navigation.navigate("Receipt", {
       data: {
         orderType: "RETURN",
         data: [

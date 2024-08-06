@@ -179,12 +179,12 @@ export function RootNavigation() {
       <StackNavigation.Screen
         name="acceptedMaterialList"
         component={AcceptedMaterialList}
-        options={optionsWithoutHeaderLeft(t("Accept Material"))}
+        options={optionsWithoutHeaderLeft(t("Accept Supply"))}
       />
       <StackNavigation.Screen
         name="acceptedDetails"
         component={DetailScreen}
-        options={optionsWithoutHeaderLeft(t("Accept Material"))}
+        options={optionsWithoutHeaderLeft(t("Accept Supply"))}
       />
       <StackNavigation.Screen
         name="confirmWeightList"
@@ -319,7 +319,7 @@ export function RootNavigation() {
       <StackNavigation.Screen
         name={"acceptQRScan"}
         component={AcceptQRScan}
-        options={optionsWithoutHeaderLeft("Acccept Material")}
+        options={optionsWithoutHeaderLeft("Accept Supply")}
       />
 
       <StackNavigation.Screen
@@ -389,7 +389,7 @@ export function RootNavigation() {
       <StackNavigation.Screen
         name="transactionHistory"
         component={TransactionHistory}
-        options={optionsWithoutHeaderLeft(t("Transaction History"))}
+        options={optionsWithoutHeaderLeft(t("History"))}
       />
       <StackNavigation.Screen
         name={"TransportationInfo"}

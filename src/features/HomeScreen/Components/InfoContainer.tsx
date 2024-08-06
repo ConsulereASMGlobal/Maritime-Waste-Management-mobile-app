@@ -6,6 +6,7 @@ import { colors } from "@src/globals/colors";
 import { useTranslation } from "react-i18next";
 import LottieView from "lottie-react-native";
 import { screenHeight, screenWidth } from "@src/globals/themes";
+import { Spacer } from "@src/components/common/Spacer";
 
 const InfoContainer = () => {
   const { t } = useTranslation();
@@ -21,6 +22,7 @@ const InfoContainer = () => {
         flex: 1,
         overflow: "hidden",
         paddingBottom: 7,
+        paddingTop: 20,
       }}
     >
       <View
@@ -46,21 +48,22 @@ const InfoContainer = () => {
       <View
         style={{
           paddingVertical: 20,
-          paddingLeft: 15,
+          paddingHorizontal: 15,
           width: "50%",
           flex: 1,
         }}
       >
         <TextBold style={{ color: "white" }}>{t("Make an Impact")}</TextBold>
+        <Spacer spacing={5} />
         <TextField style={{ fontSize: 14, color: "white" }}>
           {t(
-            "Let us collaborate to improve collection and recycling rates for a greener, cleaner Malaysia and sustainable future."
+            "We are dedicated to combating ocean plastic pollution through sustainable practices, innovative technology, and comprehensive conservation efforts."
           )}
         </TextField>
       </View>
-      <View style={{ alignItems: "center", paddingRight: 5 }}>
+      {/* <View style={{ alignItems: "center", paddingRight: 5 }}>
         <InfoSVG />
-      </View>
+      </View> */}
     </View>
   );
 };

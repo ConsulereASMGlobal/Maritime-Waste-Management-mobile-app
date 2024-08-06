@@ -67,7 +67,7 @@ export const CategoryScreen = ({}: Props) => {
 
   const scrapCategoryRender = ({ item, index }) => {
     const _handleCategoryRoute = () => {
-      if (!selectedShip) {
+      if (userType !== "PICKUP_POINT" && !selectedShip) {
         return toast.danger({ message: "Please select a ship first" });
       }
       navigation.navigate(routes.quality.default, {
@@ -116,39 +116,45 @@ export const CategoryScreen = ({}: Props) => {
 
   const { t } = useTranslation();
 
+  const userType = profileData?.userType;
+
+  console.log(userType);
+
   return (
     <ScrollView style={{ backgroundColor: colors.backgroundColor, flex: 1 }}>
       <View style={styles.mainWrapper}>
-        <View
-          style={{
-            marginHorizontal: REGULAR_PADDING_SIZE,
-          }}
-        >
-          <Spacer spacing={10} />
-          <TextField
+        {userType !== "PICKUP_POINT" && (
+          <View
             style={{
-              paddingBottom: 5,
-              fontSize: 14,
+              marginHorizontal: REGULAR_PADDING_SIZE,
             }}
           >
-            Ship
-          </TextField>
-          <DropDown
-            placeholder="Select Ship"
-            rightIconName="sort-down"
-            setSelectedValue={setSelectedShip}
-            combineOnPress={(rest) =>
-              dispatch(
-                BottomModalActions.toggleBottomModal({
-                  title: "Select Ship",
-                  showList: true,
-                  data: ships,
-                  ...rest,
-                })
-              )
-            }
-          />
-        </View>
+            <Spacer spacing={10} />
+            <TextField
+              style={{
+                paddingBottom: 5,
+                fontSize: 14,
+              }}
+            >
+              Ship
+            </TextField>
+            <DropDown
+              placeholder="Select Ship"
+              rightIconName="sort-down"
+              setSelectedValue={setSelectedShip}
+              combineOnPress={(rest) =>
+                dispatch(
+                  BottomModalActions.toggleBottomModal({
+                    title: "Select Ship",
+                    showList: true,
+                    data: ships,
+                    ...rest,
+                  })
+                )
+              }
+            />
+          </View>
+        )}
         <TextBold style={styles.stepTitle}>
           {t("Select the material category")}
         </TextBold>

@@ -7,13 +7,10 @@ export const ProfileDetails = ({ profileData }: any) => {
   const { t } = useTranslation();
 
   const details = [
-    [t("Name"), profileData?.personalDetails?.name || "N/A"],
-    [t("Phone No."), profileData?.personalDetails?.mobile || "N/A"],
+    [t("Vessel Name"), profileData?.personalDetails?.name || "N/A"],
+    [t("Vessel No."), profileData?.personalDetails?.mobile || "N/A"],
     [t("Email"), profileData?.personalDetails?.email || "N/A"],
-    [
-      t("Address"),
-      `${profileData?.address?.street}, ${profileData?.address?.city}, ${profileData?.address?.state}, ${profileData?.address?.country}`,
-    ],
+    [t("Registered"), `${profileData?.address?.country}`],
   ];
 
   return (

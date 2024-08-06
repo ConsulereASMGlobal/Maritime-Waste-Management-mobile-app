@@ -31,7 +31,7 @@ export const ThirdScreen = () => {
         <ImageBox iconName="thirdSvg" />
         <StepIndicator step="three" />
         <TitleView
-          heading="Malaysian Recycling Alliance"
+          heading="Matitime Waste Management"
           subHeading="By 2025, we aim to reach a minimum recycling rate of 25% of members’ packaging volumes."
         />
         <TwoButtons
